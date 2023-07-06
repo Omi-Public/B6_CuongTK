@@ -1,0 +1,32 @@
+
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Login</h1>
+<label>Username:</label><br>
+<input type="text" id="username" name=" username" value=""><br><br>
+<label>Password:</label><br>
+<input type="password" id="password" name="password" value=""><br><br>
+<input type="button" value="Submit" onclick="login()">
+
+</body>
+<script>
+    function login(){
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                alert(this.response);
+            }
+        };
+        xhttp.open("GET", "http://localhost:3000/login?user=" +username+ "&password=" + password, true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.send();
+    }
+</script>
+</html>
