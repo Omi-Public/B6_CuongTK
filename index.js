@@ -43,11 +43,12 @@ app.post('/create', async function (req, res){
   var age = req.query.age;
   var country = req.query.country;
   var birthday = Reg.query.birthday;
+
     //res.send(username);
-  connection.query('Insert into tbl_user(`user`, `password`,`age`,`country`,`birthday`) values(?,?)',[user, password,age,country,birthday],function (error, results, fields) {
+  connection.query('Insert into user(`user`, `password`,`age`,`country`,`birthday`) values(?,?,?,?,?)',[user, password,age,country,birthday],function (error, results, fields) {
     res.send(results)
   });
-  var user = await connection.query('SELECT * FROM tbl_user where id = 1', function (error, results, fields) {
+  var user = await connection.query('SELECT * FROM user where id = 1', function (error, results, fields) {
     res.send(results)
   });
     //res.json(JSON.stringify(user));
