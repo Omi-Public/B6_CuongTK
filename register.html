@@ -16,6 +16,7 @@
 <label>birthday:</label><br>
 <input type="text" id="birthday" name="birthday" value=""><br><br>
 <input type="button" value="Create" onclick="insert()">
+<input type="button" value="back" onclick="back()">
 </body>
 <script>
     function insert(){
@@ -35,5 +36,7 @@
         xhttp.open("POST", "http://localhost:3000", true);
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send(param1);}
-
+    function back(){
+        window.location.replace("file:///C:/Users/cuongtk02/Documents/Training_5/login.html");
+    }
 </script>
