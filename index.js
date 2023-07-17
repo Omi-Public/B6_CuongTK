@@ -42,7 +42,7 @@ app.post('/create', async function (req, res){
   var password = req.query.password;
   var age = req.query.age;
   var country = req.query.country;
-  var birthday = Reg.query.birthday;
+  var birthday = req.query.birthday;
 
     //res.send(username);
   connection.query('Insert into user(`user`, `password`,`age`,`country`,`birthday`) values(?,?,?,?,?)',[user, password,age,country,birthday],function (error, results, fields) {
